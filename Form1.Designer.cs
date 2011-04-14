@@ -32,12 +32,12 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.LoginComboBox = new System.Windows.Forms.ComboBox();
+			this.PassTextBox = new System.Windows.Forms.TextBox();
+			this.MemPassCheckBox = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.CancelButton = new System.Windows.Forms.Button();
+			this.LogInButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -69,31 +69,31 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Пароль: ";
 			// 
-			// comboBox1
+			// LoginComboBox
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(129, 119);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(166, 21);
-			this.comboBox1.TabIndex = 3;
+			this.LoginComboBox.FormattingEnabled = true;
+			this.LoginComboBox.Location = new System.Drawing.Point(129, 119);
+			this.LoginComboBox.Name = "LoginComboBox";
+			this.LoginComboBox.Size = new System.Drawing.Size(166, 21);
+			this.LoginComboBox.TabIndex = 3;
 			// 
-			// textBox1
+			// PassTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(129, 146);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.PasswordChar = '*';
-			this.textBox1.Size = new System.Drawing.Size(166, 20);
-			this.textBox1.TabIndex = 4;
+			this.PassTextBox.Location = new System.Drawing.Point(129, 146);
+			this.PassTextBox.Name = "PassTextBox";
+			this.PassTextBox.PasswordChar = '*';
+			this.PassTextBox.Size = new System.Drawing.Size(166, 20);
+			this.PassTextBox.TabIndex = 4;
 			// 
-			// checkBox1
+			// MemPassCheckBox
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(129, 173);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(121, 17);
-			this.checkBox1.TabIndex = 5;
-			this.checkBox1.Text = "Запомнить пароль";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.MemPassCheckBox.AutoSize = true;
+			this.MemPassCheckBox.Location = new System.Drawing.Point(129, 173);
+			this.MemPassCheckBox.Name = "MemPassCheckBox";
+			this.MemPassCheckBox.Size = new System.Drawing.Size(121, 17);
+			this.MemPassCheckBox.TabIndex = 5;
+			this.MemPassCheckBox.Text = "Запомнить пароль";
+			this.MemPassCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// label3
 			// 
@@ -103,35 +103,38 @@
 			this.label3.Size = new System.Drawing.Size(319, 2);
 			this.label3.TabIndex = 6;
 			// 
-			// button1
+			// CancelButton
 			// 
-			this.button1.Location = new System.Drawing.Point(239, 222);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(92, 23);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "Отмена";
-			this.button1.UseVisualStyleBackColor = true;
+			this.CancelButton.Location = new System.Drawing.Point(239, 222);
+			this.CancelButton.Name = "CancelButton";
+			this.CancelButton.Size = new System.Drawing.Size(92, 23);
+			this.CancelButton.TabIndex = 7;
+			this.CancelButton.Text = "Отмена";
+			this.CancelButton.UseVisualStyleBackColor = true;
+			this.CancelButton.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// button2
+			// LogInButton
 			// 
-			this.button2.Location = new System.Drawing.Point(141, 222);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(92, 23);
-			this.button2.TabIndex = 8;
-			this.button2.Text = "Войти";
-			this.button2.UseVisualStyleBackColor = true;
+			this.LogInButton.Location = new System.Drawing.Point(141, 222);
+			this.LogInButton.Name = "LogInButton";
+			this.LogInButton.Size = new System.Drawing.Size(92, 23);
+			this.LogInButton.TabIndex = 8;
+			this.LogInButton.Text = "Войти";
+			this.LogInButton.UseVisualStyleBackColor = true;
+			this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
 			// 
 			// AuthForm
 			// 
+			this.AcceptButton = this.LogInButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(343, 257);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.LogInButton);
+			this.Controls.Add(this.CancelButton);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.checkBox1);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.comboBox1);
+			this.Controls.Add(this.MemPassCheckBox);
+			this.Controls.Add(this.PassTextBox);
+			this.Controls.Add(this.LoginComboBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
@@ -153,12 +156,12 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.ComboBox LoginComboBox;
+		private System.Windows.Forms.TextBox PassTextBox;
+		private System.Windows.Forms.CheckBox MemPassCheckBox;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button CancelButton;
+		private System.Windows.Forms.Button LogInButton;
 	}
 }
 
