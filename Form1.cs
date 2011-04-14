@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Market_Management
 {
-	public partial class Form1 : Form
+	public partial class AuthForm : Form
 	{
-		public Form1()
+		public AuthForm()
 		{
 			InitializeComponent();
 		}
