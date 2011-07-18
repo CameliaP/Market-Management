@@ -48,6 +48,11 @@ namespace Market_Management
 			Environment.Exit(0);
 		}
 
+		private void hr_FormClosed() 
+		{
+			this.Show();
+		}
+
 		private void LogInButton_Click(object sender, EventArgs e)
 		{
 			// check if login is empty
@@ -71,7 +76,13 @@ namespace Market_Management
 			    MessageBox.Show(exc.Message, "Вход в систему", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			    return;
 			}
-			MessageBox.Show("Успешно!", "Вход в систему", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			// if HR is selected - open appropriate window
+			if (RoleComboBox.SelectedIndex==0) 
+			{
+				this.Hide();
+				HrForm hr = new HrForm();
+				hr.Show();
+			}
 			// remember pass if needed
 			if (MemPassCheckBox.Checked) 
 			{
